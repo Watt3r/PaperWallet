@@ -44,5 +44,5 @@
 - Wallet Address
 - Restore Seed Phrase
 
-#### Forked from [our Service Developers GitHub](https://github.com/Sajo8/amitycoin-paper-wallet)
+#### Forked from [our Service Developer's GitHub](https://github.com/Sajo8/amitycoin-paper-wallet)
 
