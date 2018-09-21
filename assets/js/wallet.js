@@ -65,6 +65,30 @@ var genwallet = function(lang) {
   spend_key_widget.innerHTML = keys.spend.sec;
   view_key_widget.innerHTML = keys.view.sec;
 
+  address_widget_copy.innerHTML = keys.public_addr;
+  mnemonic_widget_copy.innerHTML = mnemonic;
+  spend_key_widget_copy.innerHTML = keys.spend.sec;
+  view_key_widget_copy.innerHTML = keys.view.sec;
+
+  var typeNumber = 0;
+  var errorCorrectionLevel = 'L';
+
+  var qr = qrcode(typeNumber, errorCorrectionLevel);
+  qr.addData(keys.public_addr);
+  qr.make();
+  document.getElementById('address_qr_widget_copy').innerHTML = qr.createImgTag();
+
+
+  var qr = qrcode(typeNumber, errorCorrectionLevel);
+  qr.addData(keys.spend.sec);
+  qr.make();
+  document.getElementById('qrcodeSecret_copy').innerHTML = qr.createImgTag();
+
+  var qr = qrcode(typeNumber, errorCorrectionLevel);
+  qr.addData(keys.view.sec);
+  qr.make();
+  document.getElementById('qrcodeView_copy').innerHTML = qr.createImgTag();
+
   // wallet_keys_widget.innerHTML = keys.privateKeys;
   //address_qr_widget.innerHTML = "";
   //qr=new QRCode(address_qr_widget, {correctLevel:QRCode.CorrectLevel.L});
